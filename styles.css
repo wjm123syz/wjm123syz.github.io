@@ -1,0 +1,38 @@
+/* 基础样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* 关于我样式 */
+#about {
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+/* 作品展示样式 */
+#portfolio {
+    background-color: #f5f5f5;
+    padding: 20px;
+}

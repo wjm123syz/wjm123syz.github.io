@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
+    <script type="text/javascript" src="script.js"></script> <!-- 引入JavaScript文件 -->
+    <title>个人主页</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <noscript><h1 style="color:#FF0000"><strong>抱歉，此网站如果未启用javascript则无法正常工作。请设置允许javascript执行后重新访问。</strong></h1><</noscript>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">关于我</a></li>
+                <li><a href="#">作品展示</a></li>
+                <li><a href="#">联系我</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <a>服务器时间：</a>
+        <script>
+            Date.prototype.format = function (fmt) {
+                var o = {
+                    "y+": this.getFullYear, //年
+                    "M+": this.getMonth() + 1, //月份
+                    "d+": this.getDate(), //日
+                    "h+": this.getHours(), //小时
+                    "m+": this.getMinutes(), //分
+                    "s+": this.getSeconds() //秒
+                };
+                if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                for (var k in o)
+                    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                return fmt;
+            }
+            setInterval("document.getElementById('dateTime').innerHTML = (new Date()).format('yyyy-MM-dd hh:mm:ss');", 1000);
+        </script>
+        <div id="dateTime"></div>
+            <h1>欢迎来到我的个人主页</h1>
+            <p>这里是我的个人简介和一些作品。</p>
+        </section>
+
+        <section id="about">
+            <h2>关于我</h2>
+            <p>我是一个热爱编程和设计的开发者。</p>
+        </section>
+
+        <section id="portfolio">
+            <h2>作品展示</h2>
+            <ul id="portfolioList">
+                <!-- 在这里添加作品链接 -->
+                <li><img src="image1.jpg" alt="Image 1"></li>
+                <li><img src="image2.jpg" alt="Image 2"></li>
+                <li><img src="image3.jpg" alt="Image 3"></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer id="footer">
+        <p>&copy; 2023 我的个人主页. All rights reserved.</p>
+    </footer>
+</body>
+</html>
